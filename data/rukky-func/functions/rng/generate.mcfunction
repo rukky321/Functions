@@ -1,4 +1,4 @@
-#> custom_rain:func/rng
+#> rukky-func:rng/generate
 #
 #	@input score #rng.max rukky-func output is less than this value.
 # @output score #rng.num rukky-func random number. min value is 0. If #rng.max is less than 1, this value is always 0.
