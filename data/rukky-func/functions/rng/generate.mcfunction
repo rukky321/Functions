@@ -1,7 +1,7 @@
 #> rukky-func:rng/generate
 #
 #	@input score #rng.max rukky-func output is less than this value.
-# @output score #rng.num rukky-func random number. min value is 0. If #rng.max is less than 1, this value is always 0.
+# @output score #rng.num rukky-func random number. min value is 0. if #rng.max is less than 1, this value is always 0.
 # @public
 
 # インプット値が不正な値である場合の処理
