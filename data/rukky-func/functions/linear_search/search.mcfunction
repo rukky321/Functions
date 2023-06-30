@@ -36,11 +36,11 @@ data remove storage rukky-func: linear_search.array
 
 # スコアホルダーを定義する部分
 #>
-# input value of rukky-func:linear_search
+# input value of rukky-func:linear_search/search
 # @public
 #define score_holder #linear_search.target
 #>
-# output value of rukky-func:linear_search
+# output value of rukky-func:linear_search/search
 # @public
 #define score_holder #linear_search.index
 
