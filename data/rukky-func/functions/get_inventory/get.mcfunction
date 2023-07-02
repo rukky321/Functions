@@ -25,5 +25,5 @@ scoreboard players reset #get_inventory.slot
 # @public
 #define score_holder #get_inventory.exist_data
 #>
-# @within rukky-func:get_inventory/**
+# @public
 #define score_holder #get_inventory.slot
