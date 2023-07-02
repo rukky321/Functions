@@ -10,13 +10,13 @@ scoreboard players reset #modify_inventory.success rukky.func
 # 防具立てを召喚する
 summon armor_stand 0 -10000 0 {Tags:["rukky-func.modify_inventory"]}
 
-# 防具立てのmainhandに入力データを移す
-data modify entity @e[tag=rukky-func.modify_inventory,limit=1] HandItems[0] set from storage rukky-func modify_inventory.data
+# 防具立てのmainhandに入力データを移す。これに失敗した場合は出力を0にして編集操作を行わない
+execute store success score #modify_inventory.success rukky.func run data modify entity @e[tag=rukky-func.modify_inventory,limit=1] HandItems[0] set from storage rukky-func modify_inventory.data
 
 # スロットに合わせて操作を行う
-execute if score #modify_inventory.slot rukky.func matches -1..35 run function rukky-func:modify_inventory/helper/-1_35
-execute if score #modify_inventory.slot rukky.func matches -106 run function rukky-func:modify_inventory/helper/-106
-execute if score #modify_inventory.slot rukky.func matches 100..103 run function rukky-func:modify_inventory/helper/100_103
+execute unless score #modify_inventory.success rukky.func matches 0 if score #modify_inventory.slot rukky.func matches -1..35 run function rukky-func:modify_inventory/helper/-1_35
+execute unless score #modify_inventory.success rukky.func matches 0 if score #modify_inventory.slot rukky.func matches -106 run function rukky-func:modify_inventory/helper/-106
+execute unless score #modify_inventory.success rukky.func matches 0 if score #modify_inventory.slot rukky.func matches 100..103 run function rukky-func:modify_inventory/helper/100_103
 
 # 該当するスロットがなければ出力を0に設定
 execute unless score #modify_inventory.slot rukky.func matches -1..35 unless score #modify_inventory.slot rukky.func matches -106 unless score #modify_inventory.slot rukky.func matches 100..103 run scoreboard players set #modify_inventory.success rukky.func 0
