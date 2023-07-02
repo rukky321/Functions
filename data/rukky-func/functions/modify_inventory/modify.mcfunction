@@ -1,7 +1,7 @@
 #> rukky-func:modify_inventory/modify
 # @input score #modify_inventory.slot rukky.func (target slot number -1:mainhand, -106:offhand, 100~103:feet~head)
 # @input storage rukky-func modify_inventory.data (item data)
-# @output score #get_inventory.success rukky.func (success or not 0:not success  1:success)
+# @output score #modify_inventory.success rukky.func (success or not 0:not success  1:success)
 # @public
 
 # 出力データを削除
