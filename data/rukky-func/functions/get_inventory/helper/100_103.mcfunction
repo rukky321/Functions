@@ -1,4 +1,4 @@
-#> rukky-func:get_inventory/helper/-106
+#> rukky-func:get_inventory/helper/100_103
 #
 # @within rukky-func:get_inventory/**
 
