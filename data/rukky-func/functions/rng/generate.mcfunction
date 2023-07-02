@@ -5,20 +5,20 @@
 # @public
 
 # インプット値が不正な値である場合の処理
-execute unless score #rng.max rukky.func matches -2147483648..2147483647 run scoreboard players set #rng.max rukky.func 100
-execute if score #rng.max rukky.func matches -2147483648..0 run scoreboard players set #rng.max rukky.func 1
+execute unless score #rng.max rukky-func matches -2147483648..2147483647 run scoreboard players set #rng.max rukky-func 100
+execute if score #rng.max rukky-func matches -2147483648..0 run scoreboard players set #rng.max rukky-func 1
 
 # 乱数生成
 summon area_effect_cloud ~ ~ ~ {Tags:["rukky-func.rng"]}
-execute store result score #rng.num rukky.func run data get entity @e[tag=rukky-func.rng,limit=1] UUID[0]
-execute if score #rng.num rukky.func matches ..-1 run scoreboard players operation #rng.num rukky.func *= #-1 rukky.func
-scoreboard players operation #rng.num rukky.func %= #rng.max rukky.func
+execute store result score #rng.num rukky-func run data get entity @e[tag=rukky-func.rng,limit=1] UUID[0]
+execute if score #rng.num rukky-func matches ..-1 run scoreboard players operation #rng.num rukky-func *= #-1 rukky-func
+scoreboard players operation #rng.num rukky-func %= #rng.max rukky-func
 
 # 生成に使用したAECをキル
 kill @e[tag=rukky-func.rng]
 
 # インプット用スコアをリセット
-scoreboard players reset #rng.max rukky.func
+scoreboard players reset #rng.max rukky-func
 
 # スコアホルダーを定義する部分
 #>
