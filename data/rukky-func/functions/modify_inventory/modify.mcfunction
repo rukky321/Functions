@@ -1,6 +1,6 @@
 #> rukky-func:modify_inventory/modify
 # @input score #modify_inventory.slot rukky-func (target slot number -1:mainhand, -106:offhand, 100~103:feet~head)
-# @input storage rukky-func modify_inventory.data (item data)
+# @input storage rukky-func:modify_inventory data (item data)
 # @output score #modify_inventory.success rukky-func (success or not 0:not success  1:success)
 # @public
 
@@ -11,7 +11,7 @@ scoreboard players reset #modify_inventory.success rukky-func
 summon armor_stand 0 -10000 0 {Tags:["rukky-func.modify_inventory"]}
 
 # 防具立てのmainhandに入力データを移す。これに失敗した場合は出力を0にして編集操作を行わない
-execute store success score #modify_inventory.success rukky-func run data modify entity @e[tag=rukky-func.modify_inventory,limit=1] HandItems[0] set from storage rukky-func modify_inventory.data
+execute store success score #modify_inventory.success rukky-func run data modify entity @e[tag=rukky-func.modify_inventory,limit=1] HandItems[0] set from storage rukky-func:modify_inventory data
 
 # スロットに合わせて操作を行う
 execute unless score #modify_inventory.success rukky-func matches 0 if score #modify_inventory.slot rukky-func matches -1..35 run function rukky-func:modify_inventory/helper/-1_35
@@ -26,7 +26,7 @@ kill @e[tag=rukky-func.modify_inventory]
 
 # スコアとストレージをリセット
 scoreboard players reset #modify_inventory.slot
-data remove storage rukky-func modify_inventory.data
+data remove storage rukky-func:modify_inventory data
 
 # スコアホルダーを定義する部分
 #>

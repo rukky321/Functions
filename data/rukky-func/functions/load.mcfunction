@@ -9,6 +9,7 @@ scoreboard objectives add rukky-func dummy
 
 scoreboard players set #-1 rukky-func -1
 
+# ストレージの定義
 #>
 # used in rukky-func
 # @public
