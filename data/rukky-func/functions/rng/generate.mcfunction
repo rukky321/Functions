@@ -2,7 +2,7 @@
 #
 #	@input score #rng.max rukky-func output is less than this value.
 # @output score #rng.num rukky-func random number. min value is 0. if #rng.max is less than 1, this value is always 0.
-# @public
+# @private
 
 # インプット値が不正な値である場合の処理
 execute unless score #rng.max rukky-func matches -2147483648..2147483647 run scoreboard players set #rng.max rukky-func 100

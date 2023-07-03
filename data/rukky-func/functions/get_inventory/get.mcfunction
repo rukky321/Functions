@@ -2,7 +2,7 @@
 # @input score #get_inventory.slot rukky-func (target slot number)
 # @output storage rukky-func:get_inventory data (item data)
 # @output score #get_inventory.success rukky-func (whether the item exists in the specified slot. 0: not exist  1:exist)
-# @public
+# @private
 
 # 出力データを削除
 data remove storage rukky-func:get_inventory data

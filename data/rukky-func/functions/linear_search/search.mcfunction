@@ -4,7 +4,7 @@
 # @input score #linear_search.key rukky-func (key to check. 0:id , 1:Slot)
 # @output storage rukky-func:linear_search data 
 # @output score #linear_search.index rukky-func (the index of the first occurrence of target value in the array. if array does not has target value, this value is -1)
-# @public
+# @private
 
 # #linear_search.keyが設定されていない場合に0に設定
 execute unless score #linear_search.key rukky-func matches -2147483648..2147483647 run scoreboard players set #linear_search.key rukky-func 0
