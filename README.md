@@ -85,7 +85,7 @@
   - #### 使用例
     
     ``` ex_get_inventory.mcfunction
-    # 一番近くのプレイヤのホットバーの一番左にあるアイテムのデータを取得し、データが存在すればnone、存在すればそのアイテム名を出力する
+    # 一番近くのプレイヤのホットバーの一番左にあるアイテムのデータを取得し、データが存在しなければnone、存在すればそのアイテム名を出力する
     scoreboard players set #get_inventory.slot rukky-func 0
     execute as @p run function #rukky-func:get_inventory
     execute if score #get_inventory.success rukky-func matches 0 run say none
